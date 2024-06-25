@@ -1,3 +1,4 @@
+// npx browser-sync start --server --files "*.html,*.js,*.css"
 let characters = [];
 let matchingCharacters = [];
 const charactersList = document.querySelector("#charactersList")
