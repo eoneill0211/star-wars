@@ -7,7 +7,6 @@ async function getData() {
     const apiUrl = 'https://swapi2.azurewebsites.net/api/films/${id}';
     const apiUrl3 = 'https://swapi2.azurewebsites.net/api/films/${id}/characters';
     const apiUrl4 = 'https://swapi2.azurewebsites.net/api/films/${id}/planets';
-    const apiUrl5 = 'https://swapi2.azurewebsites.net/api/films/${id}/films';
 
 
     // Make a GET request using the Fetch API
