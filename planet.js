@@ -12,14 +12,14 @@ const baseUrl = `https://swapi2.azurewebsites.net/api`;
 
 addEventListener('DOMContentLoaded', () => {
     nameH1 = document.querySelector('h1#name');
-//   birthYearSpan = document.querySelector('span#birth_year');
-//   massSpan = document.querySelector('span#mass');
-//   heightSpan = document.querySelector('span#height');
-//   homeworldSpan = document.querySelector('span#homeworld');
-//   filmsUl = document.querySelector('#films>ul');
+  birthYearSpan = document.querySelector('span#birth_year');
+  massSpan = document.querySelector('span#mass');
+  heightSpan = document.querySelector('span#height');
+  homeworldSpan = document.querySelector('span#homeworld');
+  filmsUl = document.querySelector('#films>ul');
     const sp = new URLSearchParams(window.location.search)
     const id = sp.get('id')
-//   //getCharacter(id)
+    //getCharacter(id)
     getPlanet(id);
     document.getElementById('asdf').innerHTML = id;
 
@@ -79,9 +79,15 @@ async function fetchFilms(character) {
 }
 
 const renderPlanet = planet => {
-    nameH1.textContent = planet?.name; //doesn't do anything
+    nameH1.textContent = planet[0]["name"]; //doesn't do anything
     console.log(planet?.name);
-    document.getElementById('planetsinfo').innerHTML= planet[0]["name"]; //actually displays something
+
+    planet_list = ""
+    for (let i = 0; i < planet.length; i++) {
+        planet_list += '<a href="/planet.html?id=' +planet[i]["id"] +'">' + planet[i]["name"] + '</a>' + "    ";
+    }
+    homeworldSpan.innerHTML = planet_list;
+    //document.getElementById('planetsinfo').innerHTML= planet_list; //actually displays something
 
   }
   
